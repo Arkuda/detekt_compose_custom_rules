@@ -46,6 +46,6 @@ core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtxV
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-lib = { id = "com.android.library", version.ref = "agp" }
-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "2.0.10" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.9.22" }
 detekt = { id = "io.gitlab.arturbosch.detekt" , version.ref = "detekt" }
 
