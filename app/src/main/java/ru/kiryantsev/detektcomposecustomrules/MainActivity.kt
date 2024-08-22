@@ -1,4 +1,4 @@
-package ru.kiryantsev.detekt_compose_custom_rules
+package ru.kiryantsev.detektcomposecustomrules
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import ru.kiryantsev.detekt_compose_custom_rules.ui.theme.Detekt_compose_custom_rulesTheme
+import ru.kiryantsev.detektcomposecustomrules.ui.theme.Detekt_compose_custom_rulesTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

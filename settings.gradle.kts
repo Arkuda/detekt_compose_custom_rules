@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "detekt_compose_custom_rules"
 include(":app")
-include(":app:custom_compose_rules")
+include(":customcomposerules")

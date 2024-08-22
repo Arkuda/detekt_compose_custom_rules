@@ -1,4 +1,4 @@
-package ru.kiryantsev.detekt_compose_custom_rules.ui.theme
+package ru.kiryantsev.detektcomposecustomrules.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
