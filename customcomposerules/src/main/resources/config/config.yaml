@@ -1,0 +1,4 @@
+CustomComposeRules:
+  active: true
+  RequirePreviewRule:
+    active: true

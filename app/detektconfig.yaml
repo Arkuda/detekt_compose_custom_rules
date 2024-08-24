@@ -1,8 +1,0 @@
-config:
-  validation: true
-#  warningsAsErrors: false
-  excludes: "custom-compose-rules"
-
-custom-compose-rules:
-  require-preview-rule:
-    active: true

@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 rootProject.name = "detekt_compose_custom_rules"
 include(":app")
 include(":customcomposerules")
+includeBuild("conventionplugins")

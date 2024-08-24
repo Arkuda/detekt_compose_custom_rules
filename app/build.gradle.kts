@@ -1,44 +1,18 @@
-import io.gitlab.arturbosch.detekt.Detekt
-import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.detekt)
+    id("ru.kiryantsev.detekt")
 }
 
 
-detekt {
-    buildUponDefaultConfig = true // preconfigure defaults
-    allRules = false // activate all available (even unstable) rules.
-    config.setFrom("$projectDir/detektconfig.yaml") // point to your custom config defining rules to run, overwriting default behavior
-//    baseline = file("$projectDir/config/baseline.xml") // a way of suppressing issues before introducing detekt
-}
 
-
-tasks.withType<Detekt>().configureEach {
-    reports {
-        html.required.set(true) // observe findings in your browser with structure and code snippets
-        xml.required.set(true) // checkstyle like format mainly for integrations like Jenkins
-        sarif.required.set(true) // standardized SARIF format (https://sarifweb.azurewebsites.net/) to support integrations with GitHub Code Scanning
-        md.required.set(true) // simple Markdown format
-    }
-}
-
-// Kotlin DSL
-tasks.withType<Detekt>().configureEach {
-    jvmTarget = "1.8"
-}
-tasks.withType<DetektCreateBaselineTask>().configureEach {
-    jvmTarget = "1.8"
-}
 
 android {
-    namespace = "ru.kiryantsev.detekt_compose_custom_rules"
+    namespace = "ru.kiryantsev.detektcomposecustomrules"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "ru.kiryantsev.detekt_compose_custom_rules"
+        applicationId = "ru.kiryantsev.detektcomposecustomrules"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -60,21 +34,20 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
@@ -96,9 +69,5 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-
-    detektPlugins(libs.detekt.formatting)
-    detektPlugins(project(":customcomposerules", configuration = "default"))
 
 }
