@@ -22,7 +22,7 @@ The project consists of the following modules:
 ## Example
 
 Consider the following example that demonstrates the rule in action:
-
+```kotlin
 @Composable
 fun MyComposableFunction() {
 // This will trigger an error since no @Preview annotated function is present
@@ -39,7 +39,7 @@ fun ReadOnlyComposableFunction() {
 // Some read-only composable logic
 }
 
-
+```
 In the above example, MyComposableFunction will report an error because there are no @Preview or other @Composable functions in the file.
 
 
